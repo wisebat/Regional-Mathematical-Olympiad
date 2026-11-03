@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RMO 2026 candidate login test page.">
+  <meta name="referrer" content="no-referrer">
+  <title>RMO 2026 — Candidate Login</title>
+  <link rel="icon" href="assets/hbcse-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="validation.js" defer></script>
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img class="brand-logo" src="assets/hbcse-mark.svg" alt="TIFR HBCSE logo" width="76" height="76">
+        <div class="brand-copy">
+          <div class="brand-title">Regional Mathematical Olympiad (RMO 2026)</div>
+          <div class="brand-subtitle">Homi Bhabha Centre for Science Education (TIFR) &amp; MTA(I)</div>
+        </div>
+      </div>
+      <button class="header-login" id="focus-login" type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h5a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-5v-3h4V6h-4V3ZM9 4l8 8-8 8v-5H2V9h7V4Z"/></svg>
+        Candidate Login
+      </button>
+    </div>
+  </header>
+
+  <main class="login-main">
+    <section class="login-card" id="candidate-login" aria-labelledby="login-title">
+      <div class="card-heading">
+        <span class="exam-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7.4 14-1.7 7 4-1.8L12 22l1.7-6.3-6.3-1.7Zm9.2 0-6.3 1.7L12 22l2.3-2.8 4 1.8-1.7-7ZM12 1a8 8 0 1 0 0 16 8 8 0 0 0 0-16Zm0 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z"/></svg>RMO 2026</span>
+        <h1 id="login-title">Candidate Login</h1>
+        <p>Access your RMO 2026 Examination Dashboard</p>
+      </div>
+
+      <div class="card-body">
+        <div class="eligibility-notice" id="eligibility-notice" role="alert" aria-atomic="true" hidden>
+          <svg class="notice-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10.3 3a2 2 0 0 1 3.4 0l9.1 15.8a2 2 0 0 1-1.7 3H2.9a2 2 0 0 1-1.7-3L10.3 3Z"/><path d="M12 8v6m0 3v.2" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2.2"/></svg>
+          <div class="notice-copy">
+            <h2>Notice:</h2>
+            <ul><li>You are not listed as eligible for RMO 2026 enrolment. Please contact the RMO Helpdesk if you believe this is an error.</li></ul>
+          </div>
+          <button class="notice-close" id="close-notice" type="button" aria-label="Dismiss notice"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 4 16 16M20 4 4 20"/></svg></button>
+        </div>
+
+        <form id="login-form" novalidate>
+          <div class="form-field enrollment-field">
+            <label for="erp-id"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h18a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm0 3v2h18V6H3Zm5 5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5Zm-4 8h8a4 4 0 0 0-8 0Zm11-7v2h5v-2h-5Zm0 4v2h5v-2h-5Z"/></svg>IOQM 2026 Enrollment Number</label>
+            <div class="input-shell enrollment-shell">
+              <span class="field-icon hash-icon" aria-hidden="true">#</span>
+              <input id="erp-id" name="erpId" type="text" placeholder="ENTER IOQM 2026 ENROLLMENT NUMBER" maxlength="11" autocomplete="username" autocapitalize="characters" spellcheck="false" required aria-describedby="enrollment-help erp-error">
+            </div>
+            <p class="field-help" id="enrollment-help">Enter your official IOQM 2026 Enrollment / Registration Number.</p>
+            <p class="field-error" id="erp-error" hidden></p>
+          </div>
+
+          <div class="form-field dob-field">
+            <label for="date-of-birth"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 1h2v3h8V1h2v3h3a2 2 0 0 1 2 2v15a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h3V1ZM3 9v12h18V9H3Zm3 3h3v3H6v-3Zm5 0h3v3h-3v-3Zm5 0h3v3h-3v-3ZM6 17h3v3H6v-3Zm5 0h3v3h-3v-3Z"/></svg>Date of Birth</label>
+            <div class="input-shell date-shell">
+              <svg class="field-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v4m10-4v4M4 9h16M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/></svg>
+              <input id="date-of-birth" name="dateOfBirth" type="date" min="2007-08-01" max="2014-07-31" autocomplete="bday" required data-has-value="false" aria-describedby="dob-help dob-error">
+              <span class="date-placeholder" aria-hidden="true">DD/MM/YYYY</span>
+            </div>
+            <p class="field-help" id="dob-help">Select your Date of Birth as registered in IOQM 2026.</p>
+            <p class="field-error" id="dob-error" hidden></p>
+          </div>
+
+          <p class="form-status" id="login-status" role="status" aria-live="polite" hidden></p>
+          <button class="login-button" id="login-button" type="submit"><span>Login</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h17m-7-7 7 7-7 7"/></svg></button>
+        </form>
+
+        <aside class="eligibility-guide" aria-labelledby="guidelines-title">
+          <h2 id="guidelines-title"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor"/><path d="M12 10v7m0-11v.2" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>Eligibility Guidelines:</h2>
+          <ul>
+            <li>Only candidates declared qualified can log in.</li>
+            <li><strong>KV &amp; JNV Qualifiers:</strong> Students belonging to Kendriya Vidyalaya (KV) and Jawahar Navodaya Vidyalaya (JNV) are coordinated directly through institutional nodal authorities and are not permitted to log in here.</li>
+          </ul>
+        </aside>
+        <noscript><p class="form-status">Please enable JavaScript to use this test page.</p></noscript>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">Mathematical Teachers' Association (India) &amp; Homi Bhabha Centre for Science Education (TIFR)</footer>
+</body>
+</html>
