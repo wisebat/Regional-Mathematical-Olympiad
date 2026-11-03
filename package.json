@@ -1,0 +1,12 @@
+{
+  "name": "rmo-test-login",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "RMO2026 testing page with private Discord login logging",
+  "engines": { "node": ">=24.0.0" },
+  "scripts": {
+    "start": "node server/index.mjs",
+    "test": "node --test server/logger.test.mjs"
+  }
+}
